@@ -1,4 +1,4 @@
-export class ReportGenerator {
+class ReportGenerator {
   constructor(database) {
     this.db = database;
   }
@@ -37,7 +37,8 @@ export class ReportGenerator {
           total += item.value;
         } else if (reportType === 'HTML') {
           const style = item.priority ? 'style="font-weight:bold;"' : '';
-          report += `<tr ${style}><td>${item.id}</td><td>${item.name}</td><td>${item.value}</td></tr>\n`;
+          const rowOpen = style ? `<tr ${style}>` : `<tr>`;
+          report += `${rowOpen}<td>${item.id}</td><td>${item.name}</td><td>${item.value}</td></tr>\n`;
           total += item.value;
         }
       } else if (user.role === 'USER') {
@@ -67,3 +68,5 @@ export class ReportGenerator {
     return report.trim();
   }
 }
+
+module.exports = { ReportGenerator };

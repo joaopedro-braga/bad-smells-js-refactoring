@@ -1,4 +1,4 @@
-import { ReportGenerator } from '../src/ReportGenerator.js';
+const { ReportGenerator } = require('../src/ReportGenerator');
 
 // --- Dados de Teste ---
 const adminUser = { name: 'Admin', role: 'ADMIN' };

@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Projeto de exemplo para o trabalho de refatoração e bad smells.",
   "main": "src/ReportGenerator.js",
-  "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "npx jest",
     "lint": "eslint src/"
   },
   "keywords": [
@@ -22,6 +21,7 @@
     "jest": "^29.7.0"
   },
   "jest": {
-    "transform": {}
+    "transform": {},
+    "testEnvironment": "node"
   }
 }
